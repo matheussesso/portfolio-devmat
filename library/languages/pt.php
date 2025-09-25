@@ -48,6 +48,7 @@ return [
     'project_tibiaking' => 'Fórum Tibia King',
     'project_obf' => 'Website da OBF',
     'project_darkhumor' => 'API Dark Humor',
+    'project_plataforma_refatorando' => 'Plataforma Refatorando',
     
     // Projetos - Descrições
     'desc_cfo_website' => 'Diversos serviços foram realizados, sendo eles, implementação de diversas novas features no site, correção de bugs, ajustes de layout, atualização de plugins, atualização de versão da plataforma WordPress e migração completa da infraestrutura do sistema para modelo de containers com Docker Compose.',
@@ -61,8 +62,8 @@ return [
     'desc_tibiaking' => 'Idealizador, fundador e desenvolvedor do fórum Tibia King, comunidade online focada no compartilhamento de códigos open-source e conhecimentos relacionados ao projeto OTServ (Open Tibia Server) para criação de jogos baseado na engine do Tibia. Além disso, fui administrador operacional, gestor de equipe e conteúdo.',
     'desc_obf' => 'Devido ao alto volume de acesso o site sofria instabilidades, devido a isso, realizei uma correção e atualização de plugins, atualização de versão da plataforma WordPress e migração completa da infraestrutura do sistema de uma hospedagem compartilhada para um servidor dedicado com a infraestrutura no modelo de containers com Docker Compose.',
     'desc_darkhumor' => 'Desenvolvi uma API do zero utilizando o framework CodeIgniter, gratuita e open-source, com o objetivo de fornecer mais de 1000 piadas de humor em formato JSON, projeto inspirado na API no projeto api.chucknorris.io.',
-
-    // 404 Page
+    'desc_plataforma_refatorando' => 'Um sistema de aprendizagem LMS, desenvolvi toda uma arquitetura em API Rest para o aproveitamento dos dados no desenvolvimento dos sistemas únicos da plataforma. E também fiz implementações de layout, sistemas de rankeamentos dos usuarios e correções de bugs.',
+  // 404 Page
     '404_title' => 'Oops! Página não encontrada.',
     '404_description' => 'A página que você está procurando não existe.',
     '404_button' => 'Voltar para o Início',

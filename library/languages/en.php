@@ -44,11 +44,12 @@ return [
     'project_cfo_ciosp' => 'CFO + CIOSP Landing Page',
     'project_adasa' => 'ADASA Website',
     'project_i9brasil' => 'i9 Brasil Condominiums Website',
-    'project_proeduc' => 'Pro-Educ School System',
+    'project_proeduc' => 'Pró-Educ School System',
     'project_tibiaking' => 'Tibia King Forum',
     'project_obf' => 'OBF Website',
     'project_darkhumor' => 'Dark Humor API',
-    
+    'project_plataforma_refatorando' => 'Refatorando Platform',
+
     // Projects - Descriptions
     'desc_cfo_website' => 'Various services were performed, including implementation of various new features on the site, bug fixes, layout adjustments, plugin updates, WordPress platform version update and complete migration of the system infrastructure to a container model with Docker Compose.',
     'desc_cfo_consultations' => 'Development of the system from scratch, from planning to final delivery. It is a system for use by CFO and CRO members with the objective of providing data through advanced queries, issuing detailed reports and graphs using as a direct source the databases of the Federal Council of Dentistry.',
@@ -61,6 +62,7 @@ return [
     'desc_tibiaking' => 'Creator, founder and developer of the Tibia King forum, an online community focused on sharing open-source codes and knowledge related to the OTServ (Open Tibia Server) project for creating games based on the Tibia engine. In addition, I was operational administrator, team manager and content manager.',
     'desc_obf' => 'Due to the high volume of access, the site suffered instabilities, due to this, I performed a correction and plugin update, WordPress platform version update and complete migration of the system infrastructure from shared hosting to a dedicated server with infrastructure in the container model with Docker Compose.',
     'desc_darkhumor' => 'I developed an API from scratch using the CodeIgniter framework, free and open-source, with the objective of providing more than 1000 humor jokes in JSON format, project inspired by the API project api.chucknorris.io.',
+    'desc_plataforma_refatorando' => 'An LMS learning system, I developed a complete REST API architecture for data utilization in the development of the platform\'s unique systems. I also implemented layouts, user ranking systems and bug fixes.',
 
     // 404 Page
     '404_title' => 'Oops! Page Not Found',

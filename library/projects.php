@@ -89,6 +89,14 @@ $projects = [
         'image' => 'assets/img/portfolio/apidarkhumor.png',
         'description' => __('desc_darkhumor'),
         'technologies' => 'PHP, CodeIgniter, API Rest, Open Source'
+    ],
+    [
+        'title' => __('project_plataforma_refatorando'),
+        'url' => 'https://app.refatorando.com.br/',
+        'domain' => 'app.refatorando.com.br',
+        'image' => 'assets/img/portfolio/plataforma-refatorando.png',
+        'description' => __('desc_plataforma_refatorando'),
+        'technologies' => 'PHP, JavaScript, WordPress, LearnDash, BuddyBoss, GamiPress, API Rest'
     ]
 ];
 

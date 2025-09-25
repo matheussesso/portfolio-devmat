@@ -40,13 +40,13 @@ include __DIR__ . '/../library/projects.php';
                 <span class="badge">Bootstrap</span>
                 <span class="badge">HTML</span>
                 <span class="badge">CSS</span>
-                <span class="badge">Banco de Dados</span>
+                <span class="badge">Database</span>
                 <span class="badge">SQL</span>
                 <span class="badge">Docker</span>
                 <span class="badge">Linux</span>
                 <span class="badge">Bash</span>
                 <span class="badge">Git</span>
-                <span class="badge">Métodos Ágeis</span>
+                <span class="badge">Agile Methods</span>
             </div>
 
             <div class="social-icons">
