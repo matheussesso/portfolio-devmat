@@ -8,7 +8,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/matheussesso/portfolio-devmat/refs/heads/main/public/assets/img/imgdemo.png" alt="Demo do Portfolio" width="600" />
+  <img src="https://raw.githubusercontent.com/matheussesso/portfolio-devmat/refs/heads/main/public/assets/img/imgdemo.gif" alt="Demo do Portfolio" width="600" />
 </div>
 
 A simple, modern, responsive portfolio template built with pure PHP and a bit of Javascript, featuring multi-language support, dark/light theme toggle, and an elegant interface. Perfect for developers looking to create their own portfolio website.
