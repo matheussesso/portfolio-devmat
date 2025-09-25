@@ -1,1 +1,82 @@
-.github
+# Arquivos do Sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+error.log
+access.log
+
+# Cache
+cache/
+tmp/
+temp/
+
+# Configurações locais
+config.local.php
+.env
+.env.local
+
+# Dependências
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# Build e distribuição
+dist/
+build/
+*.min.js
+*.min.css
+
+# Backup
+*.bak
+*.backup
+*.old
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de sessão
+sessions/
+
+# Uploads de usuário
+uploads/
+user-uploads/
+
+# Arquivos de configuração sensíveis
+database.php
+config.php
+
+# Arquivos de desenvolvimento
+test.php
+debug.php
+phpinfo.php
+
+# Arquivos de documentação gerados
+docs/build/
+
+# Arquivos de teste
+tests/coverage/
+.phpunit.result.cache
+
+# Arquivos específicos do projeto
+public/assets/cv/curriculo.pdf
+public/assets/img/foto.jpg
+
+# GitHub
+.github/
