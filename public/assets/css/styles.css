@@ -267,30 +267,7 @@ p {
     transform: translateY(-3px);
 }
 
-/* Toggle de tema */
-#theme-toggle {
-    position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-md);
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--text-color);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--border-radius-full);
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-#theme-toggle:hover {
-    transform: rotate(15deg);
-}
+/* Estilos antigos do botão de tema removidos - agora está no .header-controls */
 
 /* Estilos do portfólio */
 .portfolio-header {
@@ -740,10 +717,7 @@ body.dark-theme .background-codes span {
     color: rgba(255, 255, 255, 0.1);
 }
 
-body.dark-theme #theme-toggle {
-    color: var(--dark-text);
-    background-color: rgba(0, 0, 0, 0.6);
-}
+/* Estilo antigo removido - agora está no .header-controls */
 
 /* Seta animada para o portfólio */
 .scroll-arrow {
@@ -840,11 +814,7 @@ body.dark-theme .scroll-arrow {
         line-clamp: 2;
     }
 
-    #theme-toggle {
-        font-size: 1.5rem;
-        top: var(--spacing-sm);
-        right: var(--spacing-sm);
-    }
+    /* Estilo antigo removido - agora está no .header-controls */
 
     .search-box input {
         font-size: 0.9rem;
@@ -956,5 +926,187 @@ body.dark-theme .scroll-arrow {
 
     .portfolio-card-content {
         padding: var(--spacing-sm);
+    }
+}
+
+/* Controles do Header */
+.header-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Botão de Alternar Tema */
+.theme-toggle-btn {
+    background: var(--box-background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--box-shadow);
+    color: var(--text-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-btn i {
+    transition: transform var(--transition-speed) ease;
+}
+
+/* Seletor de Idiomas */
+.language-selector {
+    position: relative;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--box-background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--box-shadow);
+    min-width: 80px;
+}
+
+.language-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.language-toggle .current-flag {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.language-toggle .current-lang {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.language-toggle i {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    transition: transform var(--transition-speed) ease;
+}
+
+.language-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.language-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--box-background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-speed) ease;
+    margin-top: 5px;
+    min-width: 140px;
+}
+
+.language-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease;
+    font-size: 0.9rem;
+}
+
+.language-option:hover {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.language-option img {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+/* Tema escuro - Controles do Header */
+body.dark-mode .theme-toggle-btn,
+body.dark-mode .language-toggle,
+body.dark-mode .language-menu {
+    background: var(--dark-box-background);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--dark-text);
+}
+
+body.dark-mode .language-toggle .current-lang,
+body.dark-mode .language-option {
+    color: var(--dark-text);
+}
+
+body.dark-mode .language-option:hover {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+/* Responsividade - Controles do Header */
+@media (max-width: 768px) {
+    .header-controls {
+        top: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+    
+    .theme-toggle-btn {
+        min-width: 40px;
+        height: 40px;
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .language-toggle {
+        padding: 6px 10px;
+        min-width: 70px;
+    }
+    
+    .language-toggle .current-flag {
+        width: 18px;
+        height: 13px;
+    }
+    
+    .language-option img {
+        width: 18px;
+        height: 13px;
     }
 }

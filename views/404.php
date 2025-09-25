@@ -3,11 +3,11 @@
 <div class="error-container">
     <h1>404</h1>
     <p>
-        Oops! Página não encontrada.
+        <?php echo __('404_title'); ?>
     <br>
-        A página que você está procurando não existe.
+        <?php echo __('404_description'); ?>
     </p>
-    <p><a href="/">Voltar para o inicio</a></p>
+    <p><a href="/"><?php echo __('404_button'); ?></a></p>
 </div>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

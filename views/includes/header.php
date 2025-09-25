@@ -1,23 +1,28 @@
+<?php 
+require_once __DIR__ . '/../../library/language.php';
+$currentLang = Language::getCurrentLanguage();
+$langAttribute = $currentLang === 'en' ? 'en' : 'pt-br';
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="<?php echo $langAttribute; ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvedor Web - Matheus Sesso</title>
-    <meta content="Desenvolvimento de sites e sistemas web" name="description">
-    <meta content="desenvolvimento, desenvolvimento de sites, desenvolvimento de site, criação de sites, criação de site, layout, layout web, ciração de layout de site, layout do site, template de site, wordpress, desenvolvimento wordpress, joomla, desenvolvimento de sistemas, sistemas online, loja virutal, ecommerce, e-commerce, SEO, marketing digital, hospedagem web, hospedagem online, hospedagem de sites, hospedagem de site, servidor, vps, servidor dedicado, servidor linux, servidor windows, suporte, suporte técnico, manutenção de site, manutenção em sistemas, dominio, e-mail personalizado, php, html, css, html5, css3, docker, laravel, javascript, bootstrap, bulma, node, node.js, linux, sql, banco de dados, mysql, sql server" name="keywords">
+    <title><?php echo __('meta_title'); ?></title>
+    <meta content="<?php echo __('meta_description'); ?>" name="description">
+    <meta content="<?php echo __('meta_keywords'); ?>" name="keywords">
   
     <!-- Meta tags Open Graph -->
-    <meta property="og:title" content="Desenvolvedor Web - Matheus Sesso">
-    <meta property="og:description" content="Desenvolvimento de Sites e Sistemas Web">
+    <meta property="og:title" content="<?php echo __('og_title'); ?>">
+    <meta property="og:description" content="<?php echo __('og_description'); ?>">
     <meta property="og:image" content="https://devmat.com.br/img/meta-img.png">
     <meta property="og:url" content="https://devmat.com.br/">
     <meta property="og:type" content="website">
 
     <!-- Meta tags do Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Desenvolvedor Web - Matheus Sesso">
-    <meta name="twitter:description" content="Desenvolvimento de Sites e Sistemas Web">
+    <meta name="twitter:title" content="<?php echo __('twitter_card_title'); ?>">
+    <meta name="twitter:description" content="<?php echo __('twitter_card_description'); ?>">
     <meta name="twitter:image" content="https://devmat.com.br/img/meta-img.png">
 
     <!-- Favicon -->
@@ -46,3 +51,32 @@
 </head>
 
 <body>
+<!-- Controles do Header -->
+<div class="header-controls">
+    <!-- Botão de Alternar Tema -->
+    <button id="theme-toggle" aria-label="<?php echo __('theme_toggle'); ?>" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- Seletor de Idiomas -->
+    <div class="language-selector">
+        <div class="language-toggle" onclick="toggleLanguageMenu()">
+            <img src="assets/img/flags/<?php echo Language::getLanguageFlag($currentLang); ?>.png" 
+                 alt="<?php echo Language::getLanguageName($currentLang); ?>" 
+                 class="current-flag">
+            <span class="current-lang"><?php echo strtoupper($currentLang); ?></span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="language-menu" id="languageMenu">
+            <?php foreach(Language::getAvailableLanguages() as $lang): ?>
+                <?php if($lang !== $currentLang): ?>
+                    <a href="<?php echo Language::getCurrentUrl($lang); ?>" class="language-option">
+                        <img src="assets/img/flags/<?php echo Language::getLanguageFlag($lang); ?>.png" 
+                             alt="<?php echo Language::getLanguageName($lang); ?>">
+                        <span><?php echo Language::getLanguageName($lang); ?></span>
+                    </a>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>

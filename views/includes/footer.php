@@ -3,5 +3,28 @@
 
     <!-- Custom JS -->
     <script src="assets/js/theme.js"></script>
+    
+    <!-- Language Selector JS -->
+    <script>
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            const toggle = document.querySelector('.language-toggle');
+            
+            menu.classList.toggle('show');
+            toggle.classList.toggle('active');
+        }
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(event) {
+            const selector = document.querySelector('.language-selector');
+            const menu = document.getElementById('languageMenu');
+            const toggle = document.querySelector('.language-toggle');
+            
+            if (!selector.contains(event.target)) {
+                menu.classList.remove('show');
+                toggle.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

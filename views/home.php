@@ -3,8 +3,6 @@ include __DIR__ . '/includes/header.php';
 include __DIR__ . '/../library/projects.php'; 
 ?>
 
-<button id="theme-toggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
-
 <div class="background-codes">
     <span>{}</span>
     <span>==</span>
@@ -21,11 +19,11 @@ include __DIR__ . '/../library/projects.php';
         <div class="box">
             <img src="assets/img/foto.jpg" alt="Minha Foto" class="profile-image">
             <h1>Matheus Sesso</h1>
-            <h2>Desenvolvedor Web Full Stack</h2>
-            <p>Sou desenvolvedor web full stack com mais de 10 anos de experiência. Já trabalhei para órgãos públicos e grandes empresas, desenvolvendo e mantendo aplicações web robustas e eficientes dos mais variados propósitos.</p>
+            <h2><?php echo __('full_stack_developer'); ?></h2>
+            <p><?php echo __('intro_text'); ?></p>
 
             <button onclick="scrollToPortfolio()" class="btn-port scroll-to-portfolio">
-                Confira meu Portfólio
+                <?php echo __('portfolio_button'); ?>
             </button>
                 
             <div class="skills">
@@ -52,15 +50,15 @@ include __DIR__ . '/../library/projects.php';
             </div>
 
             <div class="social-icons">
-                <a href="assets/cv/curriculo.pdf" target="_blank" title="Veja meu Curriculum"><i class="fas fa-file-alt"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=5561982891073" target="_blank" title="Entre em contato por WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:matheus@devmat.com.br" title="Entre em contato por E-mail"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/matheussesso/" target="_blank" title="Conheça meu LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/matheussesso" target="_blank" title="Confira meu GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/@matheussesso_dev" target="_blank" title="Confira meu YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://dev.to/matheussesso" target="_blank" title="Leia meus artigos no DEV.to "><i class="fab fa-dev"></i></a>
-                <a href="https://medium.com/@matsesso" target="_blank" title="Leia meus artigos no Medium"><i class="fab fa-medium"></i></a>
-                <a href="https://twitter.com/matheussesso" target="_blank" title="Visite meu Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="assets/cv/curriculo.pdf" target="_blank" title="<?php echo __('cv_title'); ?>"><i class="fas fa-file-alt"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=5561982891073" target="_blank" title="<?php echo __('whatsapp_title'); ?>"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:matheus@devmat.com.br" title="<?php echo __('email_title'); ?>"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/matheussesso/" target="_blank" title="<?php echo __('linkedin_title'); ?>"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/matheussesso" target="_blank" title="<?php echo __('github_title'); ?>"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/@matheussesso_dev" target="_blank" title="<?php echo __('youtube_title'); ?>"><i class="fab fa-youtube"></i></a>
+                <a href="https://dev.to/matheussesso" target="_blank" title="<?php echo __('devto_title'); ?>"><i class="fab fa-dev"></i></a>
+                <a href="https://medium.com/@matsesso" target="_blank" title="<?php echo __('medium_title'); ?>"><i class="fab fa-medium"></i></a>
+                <a href="https://twitter.com/matheussesso" target="_blank" title="<?php echo __('twitter_title'); ?>"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </div>
@@ -75,23 +73,23 @@ include __DIR__ . '/../library/projects.php';
         <div class="portfolio-header">
             <div class="header-top">
                 <div class="header-title">
-                    <h1>Meu Portfólio</h1>
-                    <p>Uma seleção dos meus melhores trabalhos em desenvolvimento web</p>
+                    <h1><?php echo __('my_portfolio'); ?></h1>
+                    <p><?php echo __('portfolio_subtitle'); ?></p>
                 </div>
                 <button onclick="scrollToHome()" class="btn-port scroll-to-home">
-                    <i class="fas fa-home"></i> Início
+                    <i class="fas fa-home"></i> <?php echo __('home_button'); ?>
                 </button>
             </div>
             
             <div class="portfolio-filters">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchProjects" placeholder="Buscar projetos...">
+                    <input type="text" id="searchProjects" placeholder="<?php echo __('search_projects'); ?>">
                 </div>
                 <div class="filter-tags" id="techFilters">
                     <!-- Tags serão adicionadas via JavaScript -->
                     <button id="resetFilters" class="btn-reset" style="display: none;">
-                        <i class="fas fa-times"></i> Resetar Filtros
+                        <i class="fas fa-times"></i> <?php echo __('reset_filters'); ?>
                     </button>
                 </div>
             </div>
@@ -104,7 +102,7 @@ include __DIR__ . '/../library/projects.php';
                     <img src="<?php echo htmlspecialchars($project['image']); ?>" 
                          alt="<?php echo htmlspecialchars($project['title']); ?>">
                     <div class="portfolio-card-overlay">
-                        <button class="btn-details">Ver Detalhes</button>
+                        <button class="btn-details"><?php echo __('view_details'); ?></button>
                     </div>
                 </div>
                 <div class="portfolio-card-content">
@@ -142,7 +140,7 @@ include __DIR__ . '/../library/projects.php';
                 </a>
                 <p id="modalDescription"></p>
                 <div class="modal-technologies">
-                    <h4><i class="fas fa-tools"></i> Tecnologias Utilizadas</h4>
+                    <h4><i class="fas fa-tools"></i> <?php echo __('technologies_used'); ?></h4>
                     <div id="modalTechTags" class="tech-tags"></div>
                 </div>
             </div>
