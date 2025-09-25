@@ -1,19 +1,15 @@
 # Ativar o mecanismo de reescrita
 RewriteEngine On
 
-# Redirecionar tudo para o diretório public
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteRule ^(.*)$ public/$1 [L]
-
 # Definir index.php como arquivo padrão
-DirectoryIndex public/index.php
+DirectoryIndex index.php
 
 # Permitir acesso direto a arquivos estáticos (CSS, JS, imagens, PDFs)
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|pdf|ico)$ [NC]
 RewriteRule ^(.*)$ - [L]
 
-# Direcionar todas as outras requisições para public/index.php
+# Direcionar todas as outras requisições para index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ public/index.php [QSA,L]
+RewriteRule ^(.*)$ index.php [QSA,L]
