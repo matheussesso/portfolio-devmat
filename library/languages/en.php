@@ -44,7 +44,7 @@ return [
     'project_cfo_ciosp' => 'CFO + CIOSP Landing Page',
     'project_adasa' => 'ADASA Website',
     'project_i9brasil' => 'i9 Brasil Condominiums Website',
-    'project_proeduc' => 'Pró-Educ School System',
+    'project_proeduc' => 'Pro-Educ School System',
     'project_tibiaking' => 'Tibia King Forum',
     'project_obf' => 'OBF Website',
     'project_darkhumor' => 'Dark Humor API',
