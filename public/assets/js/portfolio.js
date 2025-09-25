@@ -1,4 +1,10 @@
-// Funções para navegação suave entre seções
+/**
+ * Navigation functions for smooth scrolling between sections
+ */
+
+/**
+ * Smoothly scrolls to the portfolio section and updates URL hash
+ */
 function scrollToPortfolio() {
     document.getElementById('portfolio').scrollIntoView({
         behavior: 'smooth'
@@ -6,13 +12,19 @@ function scrollToPortfolio() {
     window.location.hash = 'portfolio';
 }
 
+/**
+ * Smoothly scrolls back to the home section
+ */
 function scrollToHome() {
     document.getElementById('home').scrollIntoView({
         behavior: 'smooth'
     });
 }
 
-// Inicialização do portfólio
+/**
+ * Initialize the portfolio functionality
+ * @param {Array} projects - Array of project objects containing project information
+ */
 function initPortfolio(projects) {
     const modal = document.getElementById('projectModal');
     const searchInput = document.getElementById('searchProjects');
@@ -20,7 +32,7 @@ function initPortfolio(projects) {
     const portfolioGrid = document.querySelector('.portfolio-grid');
     const resetButton = document.getElementById('resetFilters');
     
-    // Coletar todas as tecnologias únicas
+    // Collect all unique technologies
     const allTechnologies = new Set();
     projects.forEach(project => {
         project.technologies.split(', ').forEach(tech => {
@@ -28,7 +40,7 @@ function initPortfolio(projects) {
         });
     });
 
-    // Criar tags de filtro
+    // Create filter tags
     const activeFilters = new Set();
     allTechnologies.forEach(tech => {
         const filterTag = document.createElement('button');
@@ -47,7 +59,10 @@ function initPortfolio(projects) {
         techFilters.appendChild(filterTag);
     });
 
-    // Função para renderizar os projetos
+    /**
+     * Render projects in the portfolio grid
+     * @param {Array} projectsToRender - Array of projects to be displayed
+     */
     function renderProjects(projectsToRender) {
         portfolioGrid.innerHTML = '';
         projectsToRender.forEach((project, index) => {
@@ -56,7 +71,7 @@ function initPortfolio(projects) {
             card.className = 'portfolio-card';
             card.dataset.projectId = index;
             
-            // Criar uma versão resumida da descrição
+            // Create a truncated version of the description
             const shortDescription = project.description.length > 120 ? 
                 project.description.substring(0, 120) + '...' : 
                 project.description;
@@ -82,7 +97,7 @@ function initPortfolio(projects) {
                 </div>
             `;
             
-            // Adicionar o evento de clique ao card inteiro
+            // Add click event on card
             card.addEventListener('click', () => {
                 openModal(index);
             });
@@ -91,7 +106,9 @@ function initPortfolio(projects) {
         });
     }
 
-    // Função para filtrar projetos
+    /**
+     * Filter projects based on search term and active technology filters
+     */
     function filterProjects() {
         const searchTerm = searchInput.value.toLowerCase();
         const filteredProjects = projects.filter(project => {
@@ -111,7 +128,7 @@ function initPortfolio(projects) {
         
         renderProjects(filteredProjects);
         
-        // Mostrar mensagem se não houver resultados
+        // Display message if no results found
         if (filteredProjects.length === 0) {
             const noResults = document.createElement('div');
             noResults.className = 'no-results';
@@ -123,45 +140,54 @@ function initPortfolio(projects) {
         }
     }
 
-    // Função para mostrar/ocultar botão de reset
+    /**
+     * Toggle visibility of reset button based on active filters
+     */
     function toggleResetButton() {
         const hasActiveFilters = activeFilters.size > 0 || searchInput.value.trim() !== '';
         resetButton.style.display = hasActiveFilters ? 'block' : 'none';
     }
 
-    // Função para resetar todos os filtros
+    /**
+     * Reset all filters and search input to their initial state
+     */
     function resetAllFilters() {
-        // Limpar campo de busca
+        // Clear search input
         searchInput.value = '';
         
-        // Remover todos os filtros ativos
+        // Remove all active filters
         activeFilters.clear();
         
-        // Remover classe active de todas as tags
+        // Remove active class from all filter tags
         const filterTags = document.querySelectorAll('.filter-tag');
         filterTags.forEach(tag => tag.classList.remove('active'));
         
-        // Ocultar botão de reset
+        // Hide reset button
         resetButton.style.display = 'none';
         
-        // Renderizar todos os projetos
+        // Render all projects
         renderProjects(projects);
     }
 
-    // Event listeners para busca
+    // Search input event listeners
     searchInput.addEventListener('input', () => {
         filterProjects();
         toggleResetButton();
     });
 
-    // Event listener para botão de reset
+    // Reset button event listener
     resetButton.addEventListener('click', resetAllFilters);
 
-    // Função para abrir modal
+    /**
+     * Open modal with project details
+     * @param {number} projectId - Index of the project to display
+     */
     function openModal(projectId) {
         const project = projects[projectId];
-        document.getElementById('modalImage').src = project.image;
-        document.getElementById('modalImage').alt = project.title;
+        const modalImage = document.getElementById('modalImage');
+        
+        modalImage.src = project.image;
+        modalImage.alt = project.title;
         document.getElementById('modalTitle').textContent = project.title;
         document.getElementById('modalDomain').textContent = project.domain;
         document.getElementById('modalLink').href = project.url;
@@ -178,14 +204,86 @@ function initPortfolio(projects) {
         
         modal.classList.add('show');
         document.body.style.overflow = 'hidden';
+        
+        // Add click event to modal image to open full image modal
+        modalImage.addEventListener('click', () => {
+            openImageModal(project.image, project.title);
+        });
+        
+        // Add cursor pointer style to indicate image is clickable
+        modalImage.style.cursor = 'pointer';
     }
     
+    /**
+     * Close the project details modal
+     */
     function closeModal() {
         modal.classList.remove('show');
         document.body.style.overflow = '';
     }
     
-    // Event listeners para modal
+    /**
+     * Open full image modal
+     * @param {string} imageSrc - Source of the image to display
+     * @param {string} imageAlt - Alt text for the image
+     */
+    function openImageModal(imageSrc, imageAlt) {
+        // Create image modal if it doesn't exist
+        let imageModal = document.getElementById('imageModal');
+        if (!imageModal) {
+            imageModal = document.createElement('div');
+            imageModal.id = 'imageModal';
+            imageModal.className = 'image-modal';
+            imageModal.innerHTML = `
+                <div class="image-modal-content">
+                    <button class="image-modal-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img src="" alt="" class="full-image">
+                    <div class="image-modal-title"></div>
+                </div>
+            `;
+            document.body.appendChild(imageModal);
+            
+            // Add event listeners for image modal
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) closeImageModal();
+            });
+            
+            document.querySelector('.image-modal-close').addEventListener('click', closeImageModal);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && imageModal.classList.contains('show')) {
+                    closeImageModal();
+                }
+            });
+        }
+        
+        // Set image and title
+        const fullImage = imageModal.querySelector('.full-image');
+        const imageTitle = imageModal.querySelector('.image-modal-title');
+        
+        fullImage.src = imageSrc;
+        fullImage.alt = imageAlt;
+        imageTitle.textContent = imageAlt;
+        
+        // Show modal
+        imageModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    /**
+     * Close the full image modal
+     */
+    function closeImageModal() {
+        const imageModal = document.getElementById('imageModal');
+        if (imageModal) {
+            imageModal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    }
+    
+    // Modal event listeners
     document.querySelector('.modal-close').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
@@ -195,6 +293,6 @@ function initPortfolio(projects) {
         if (e.key === 'Escape') closeModal();
     });
 
-    // Renderizar projetos inicialmente
+    // Initial render of all projects
     renderProjects(projects);
 }

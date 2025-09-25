@@ -1,13 +1,13 @@
 <?php
 return [
     // Meta Tags
-    'meta_title' => 'Web Developer - Matheus Sesso',
-    'meta_description' => 'Website and web systems development',
+    'meta_title' => 'Web Developer Portfolio',
+    'meta_description' => 'Professional full stack web developer portfolio',
     'meta_keywords' => 'development, website development, web development, website creation, web design, web layout, website template, wordpress, wordpress development, joomla, system development, online systems, virtual store, ecommerce, e-commerce, SEO, digital marketing, web hosting, online hosting, website hosting, server, vps, dedicated server, linux server, windows server, support, technical support, website maintenance, system maintenance, domain, custom email, php, html, css, html5, css3, docker, laravel, javascript, bootstrap, bulma, node, node.js, linux, sql, database, mysql, sql server',
-    'og_title' => 'Web Developer - Matheus Sesso',
-    'og_description' => 'Website and Web Systems Development',
-    'twitter_card_title' => 'Web Developer - Matheus Sesso',
-    'twitter_card_description' => 'Website and Web Systems Development',
+    'og_title' => 'Web Developer Portfolio',
+    'og_description' => 'Professional full stack web developer portfolio',
+    'twitter_card_title' => 'Web Developer Portfolio',
+    'twitter_card_description' => 'Professional full stack web developer portfolio',
     
     // Navigation and Interface
     'theme_toggle' => 'Toggle Theme',
@@ -15,7 +15,7 @@ return [
     
     // Home Section
     'full_stack_developer' => 'Full Stack Web Developer',
-    'intro_text' => 'I am a full stack web developer with over 10 years of experience. I have worked for public agencies and large companies, developing and maintaining robust and efficient web applications for the most varied purposes.',
+    'intro_text' => 'Full stack web developer passionate about creating innovative digital solutions. Specialized in developing modern, responsive and scalable web applications using the best practices and current market technologies.',
     'portfolio_button' => 'Check out my Portfolio',
     'cv_title' => 'View my Resume',
     'whatsapp_title' => 'Contact me via WhatsApp',
@@ -37,32 +37,20 @@ return [
     'technologies_used' => 'Technologies Used',
     
     // Projects - Titles
-    'project_cfo_website' => 'CFO Website',
-    'project_cfo_consultations' => 'CFO Consultation System',
-    'project_cfo_prescription' => 'CFO Electronic Prescription',
-    'project_cfo_btg' => 'CFO + BTG Bank Landing Page',
-    'project_cfo_ciosp' => 'CFO + CIOSP Landing Page',
-    'project_adasa' => 'ADASA Website',
-    'project_i9brasil' => 'i9 Brasil Condominiums Website',
-    'project_proeduc' => 'Pró-Educ School System',
-    'project_tibiaking' => 'Tibia King Forum',
-    'project_obf' => 'OBF Website',
-    'project_darkhumor' => 'Dark Humor API',
-    'project_plataforma_refatorando' => 'Refatorando Platform',
+    'project_ecommerce' => 'E-commerce Platform',
+    'project_task_manager' => 'Task Management System',
+    'project_blog_cms' => 'Corporate Blog CMS',
+    'project_api_rest' => 'RESTful API',
+    'project_dashboard' => 'Analytics Dashboard',
+    'project_portfolio' => 'Responsive Portfolio Website',
 
     // Projects - Descriptions
-    'desc_cfo_website' => 'Various services were performed, including implementation of various new features on the site, bug fixes, layout adjustments, plugin updates, WordPress platform version update and complete migration of the system infrastructure to a container model with Docker Compose.',
-    'desc_cfo_consultations' => 'Development of the system from scratch, from planning to final delivery. It is a system for use by CFO and CRO members with the objective of providing data through advanced queries, issuing detailed reports and graphs using as a direct source the databases of the Federal Council of Dentistry.',
-    'desc_cfo_prescription' => 'Development of the system from scratch, from planning to final delivery. It is an electronic prescription issuance system completely online with the use of digital certificates in valid ICP-Brasil standards, for dental surgeons throughout Brazil with active registrations at the Federal Council of Dentistry.',
-    'desc_cfo_btg' => 'Layout creation and development of the detailed landing page about the partnership information between the Federal Council and BTG Bank, integration so that dental surgeons with active registrations can access and enjoy partnership benefits.',
-    'desc_cfo_ciosp' => 'Layout creation and development of landing page systems informative about the schedule and content of the congress and CIOSP speakers in partnership with the Federal Council of Dentistry.',
-    'desc_adasa' => 'Various services were performed, including correction of various bugs, layout and responsiveness adjustments, plugin updates, Joomla platform version update and database sanitization.',
-    'desc_i9brasil' => 'Website and layout developed from scratch for an accounting company focused on the condominium sector, systems and features were implemented to facilitate communication between clients and the company virtually.',
-    'desc_proeduc' => 'I participated in the development of a new school platform, in the new student enrollment system, in the new document generation system for enrolled students and management and I also developed a migration and sanitization system for the legacy system database to a new system.',
-    'desc_tibiaking' => 'Creator, founder and developer of the Tibia King forum, an online community focused on sharing open-source codes and knowledge related to the OTServ (Open Tibia Server) project for creating games based on the Tibia engine. In addition, I was operational administrator, team manager and content manager.',
-    'desc_obf' => 'Due to the high volume of access, the site suffered instabilities, due to this, I performed a correction and plugin update, WordPress platform version update and complete migration of the system infrastructure from shared hosting to a dedicated server with infrastructure in the container model with Docker Compose.',
-    'desc_darkhumor' => 'I developed an API from scratch using the CodeIgniter framework, free and open-source, with the objective of providing more than 1000 humor jokes in JSON format, project inspired by the API project api.chucknorris.io.',
-    'desc_plataforma_refatorando' => 'An LMS learning system, I developed a complete REST API architecture for data utilization in the development of the platform\'s unique systems. I also implemented layouts, user ranking systems and bug fixes.',
+    'desc_ecommerce' => 'Complete e-commerce platform developed with PHP and Laravel. Includes shopping cart system, payment processing, product management, administrative panel and integration with delivery APIs. Responsive design and SEO optimized.',
+    'desc_task_manager' => 'Web system for task and team project management. Developed with React and Node.js, includes user authentication, project creation, task assignment, real-time notification system and dashboard with productivity metrics.',
+    'desc_blog_cms' => 'Custom content management system (CMS) for corporate blogs. Developed in WordPress with custom plugins, advanced visual editor, category system, moderated comments and automatic optimization for search engines.',
+    'desc_api_rest' => 'Robust RESTful API developed with PHP and CodeIgniter framework. Includes JWT authentication, automatic documentation with Swagger, intelligent cache, rate limiting and complete logging system. Supports multiple response formats (JSON, XML).',
+    'desc_dashboard' => 'Interactive analytics dashboard developed with Vue.js and D3.js. Features real-time metrics, dynamic charts, advanced filters and exportable reports. Integration with Google Analytics and other analysis tools.',
+    'desc_portfolio' => 'Modern responsive portfolio website developed with HTML5, CSS3 and vanilla JavaScript. Minimalist design, smooth animations, performance optimized, SEO-friendly and fully responsive for all devices.',
 
     // 404 Page
     '404_title' => 'Oops! Page Not Found',

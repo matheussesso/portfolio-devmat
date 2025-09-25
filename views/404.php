@@ -1,5 +1,6 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
+<!-- 404 Error -->
 <div class="error-container">
     <h1>404</h1>
     <p>

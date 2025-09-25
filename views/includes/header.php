@@ -12,18 +12,18 @@ $langAttribute = $currentLang === 'en' ? 'en' : 'pt-br';
     <meta content="<?php echo __('meta_description'); ?>" name="description">
     <meta content="<?php echo __('meta_keywords'); ?>" name="keywords">
   
-    <!-- Meta tags Open Graph -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="<?php echo __('og_title'); ?>">
     <meta property="og:description" content="<?php echo __('og_description'); ?>">
-    <meta property="og:image" content="https://devmat.com.br/img/meta-img.png">
-    <meta property="og:url" content="https://devmat.com.br/">
+    <meta property="og:image" content="assets/img/meta-img.png">
+    <meta property="og:url" content="https://portfolio-demo.example.com/">
     <meta property="og:type" content="website">
 
-    <!-- Meta tags do Twitter Card -->
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo __('twitter_card_title'); ?>">
     <meta name="twitter:description" content="<?php echo __('twitter_card_description'); ?>">
-    <meta name="twitter:image" content="https://devmat.com.br/img/meta-img.png">
+    <meta name="twitter:image" content="assets/img/meta-img.png">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/icon" href="assets/img/favicon.png"/>
@@ -40,25 +40,27 @@ $langAttribute = $currentLang === 'en' ? 'en' : 'pt-br';
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJCHPBE4YF"></script>
+    <!-- Google Analytics (Optional - Replace with your ID) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=SEU-GA-ID-AQUI"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-SJCHPBE4YF');
+        gtag('config', 'SEU-GA-ID-AQUI');
     </script>
+    -->
 </head>
 
 <body>
-<!-- Controles do Header -->
+<!-- Header Controls -->
 <div class="header-controls">
-    <!-- Botão de Alternar Tema -->
+    <!-- Theme Toggle Button -->
     <button id="theme-toggle" aria-label="<?php echo __('theme_toggle'); ?>" class="theme-toggle-btn">
         <i class="fas fa-moon"></i>
     </button>
     
-    <!-- Seletor de Idiomas -->
+    <!-- Language Selector -->
     <div class="language-selector">
         <div class="language-toggle" onclick="toggleLanguageMenu()">
             <img src="assets/img/flags/<?php echo Language::getLanguageFlag($currentLang); ?>.png" 

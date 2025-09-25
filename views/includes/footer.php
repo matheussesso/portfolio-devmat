@@ -14,7 +14,7 @@
             toggle.classList.toggle('active');
         }
 
-        // Fechar menu ao clicar fora
+        // Close menu when click outside
         document.addEventListener('click', function(event) {
             const selector = document.querySelector('.language-selector');
             const menu = document.getElementById('languageMenu');

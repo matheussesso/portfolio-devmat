@@ -1,6 +1,9 @@
-/* Variáveis CSS */
+/**
+ * CSS Custom Properties (Variables)
+ * Global variables for consistent styling across the application
+ */
 :root {
-    /* Cores principais */
+    /* Main Colors */
     --primary-color: #2563eb;
     --secondary-color: #33a539;
     --success-color: #197a21;
@@ -10,25 +13,25 @@
     --box-background: #ffffff;
     --box-shadow: 0 4px 4px -1px rgba(0, 0, 0, 0.08), 0 2px 2px -1px rgba(0, 0, 0, 0.06);
     
-    /* Cores do tema escuro */
+    /* Dark Theme Colors */
     --dark-background: #222020;
     --dark-box-background: #333435;
     --dark-text: #f1f5f9;
     --dark-text-secondary: #94a3b8;
     
-    /* Espaçamentos */
+    /* Spacing Scale */
     --spacing-xs: 5px;
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
     
-    /* Bordas */
+    /* Border Radius */
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
     --border-radius-lg: 15px;
     --border-radius-full: 50%;
     
-    /* Transições */
+    /* Animation */
     --transition-speed: 0.3s;
 }
 
@@ -48,7 +51,10 @@ body {
     padding-top: var(--spacing-md);
 }
 
-/* Animação de fundo */
+/**
+ * Background Animation
+ * Animated code symbols in the background
+ */
 .background-codes {
     position: absolute;
     top: 0;
@@ -88,7 +94,10 @@ body {
 .background-codes span:nth-child(6) { left: 80%; animation-duration: 14s; font-size: 5.5rem; }
 .background-codes span:nth-child(7) { left: 90%; animation-duration: 25s; font-size: 3rem; }
 
-/* Container principal */
+/**
+ * Main Container
+ * Primary content wrapper with centered layout
+ */
 .box {
     max-width: 700px;
     text-align: center;
@@ -101,7 +110,10 @@ body {
                 box-shadow var(--transition-speed) ease;
 }
 
-/* Seções da single page */
+/**
+ * Single Page Sections
+ * Main sections for the single-page layout
+ */
 .home-section {
     min-height: 100vh;
     display: flex;
@@ -129,7 +141,10 @@ body {
 }
 
 
-/* Error 404 */
+/**
+ * Error 404 Page
+ * Styles for the 404 error page layout
+ */
 .error-container {
     text-align: center;
     padding: 2rem;
@@ -156,12 +171,18 @@ body {
     text-decoration: underline;
 }
 
-/* Smooth scroll para toda a página */
+/**
+ * Global Smooth Scroll
+ * Enable smooth scrolling behavior for the entire page
+ */
 html {
     scroll-behavior: smooth;
 }
 
-/* Imagem de perfil */
+/**
+ * Profile Image
+ * Styles for the circular profile image with hover effect
+ */
 .profile-image {
     border-radius: var(--border-radius-full);
     width: 180px;
@@ -175,7 +196,10 @@ html {
     transform: scale(1.05);
 }
 
-/* Tipografia */
+/**
+ * Typography
+ * Global text styles and heading hierarchy
+ */
 h1 {
     font-size: 2rem;
     margin-bottom: var(--spacing-xs);
@@ -198,7 +222,10 @@ p {
     transition: color var(--transition-speed) ease;
 }
 
-/* Skills e badges */
+/**
+ * Skills and Badges
+ * Styling for skill tags and badge components
+ */
 .skills {
     margin: var(--spacing-md) 0;
 }
@@ -219,7 +246,10 @@ p {
     transform: translateY(-2px);
 }
 
-/* Botões */
+/**
+ * Buttons
+ * Global button styles and variations
+ */
 .btn-port {
     background-color: var(--secondary-color);
     color: var(--box-background);
@@ -241,7 +271,7 @@ p {
     transform: translateY(-2px);
 }
 
-/* Botões específicos para navegação */
+/* Navigation specific buttons */
 .scroll-to-portfolio,
 .scroll-to-home {
     background-color: var(--success-color);
@@ -253,23 +283,37 @@ p {
     background-color: var(--secondary-color);
 }
 
-/* Ícones sociais */
+/* Social Icons */
 .social-icons a {
     color: var(--text-color);
     margin: 0 var(--spacing-sm);
     font-size: 1.8rem;
+    text-decoration: none;
     transition: color var(--transition-speed) ease,
                 transform var(--transition-speed) ease;
 }
 
 .social-icons a:hover {
     color: var(--primary-color);
+    text-decoration: none;
     transform: translateY(-3px);
 }
 
-/* Estilos antigos do botão de tema removidos - agora está no .header-controls */
+/* Ensure social icons never have underline */
+.social-icons a,
+.social-icons a:hover,
+.social-icons a:focus,
+.social-icons a:active,
+.social-icons a:visited {
+    text-decoration: none !important;
+}
 
-/* Estilos do portfólio */
+/* Old theme button styles removed - now in .header-controls */
+
+/**
+ * Portfolio Styles
+ * Styles for portfolio section and cards
+ */
 .portfolio-header {
     width: 100%;
     padding-top: var(--spacing-md);
@@ -529,6 +573,7 @@ p {
     flex-grow: 1;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -638,6 +683,11 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.modal-image img:hover {
+    transform: scale(1.02);
 }
 
 .modal-info {
@@ -692,7 +742,10 @@ body.dark-theme .portfolio-nav-bottom {
     border-top-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Tema escuro */
+/**
+ * Dark Theme
+ * Color overrides and specific styles for dark mode
+ */
 body.dark-theme {
     --background-color: var(--dark-background);
     --box-background: var(--dark-box-background);
@@ -701,12 +754,105 @@ body.dark-theme {
     --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.07);
 }
 
-/* Garantir que o texto das badges permaneça branco no tema escuro */
+/* Ensure badge text remains white in dark theme */
 body.dark-theme .badge,
 body.dark-theme .tech-tag, 
 body.dark-theme .scroll-to-portfolio,
 body.dark-theme .scroll-to-home {
     color: white;
+}
+
+/* Full Image Modal Styles */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-speed) ease;
+}
+
+.image-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-modal-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+    backdrop-filter: blur(10px);
+    z-index: 2001;
+}
+
+.image-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.full-image {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-speed) ease;
+}
+
+.image-modal-title {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-sm);
+    backdrop-filter: blur(10px);
+}
+
+/* Dark theme support for image modal */
+body.dark-theme .image-modal-close {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--dark-text);
+}
+
+body.dark-theme .image-modal-close:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .image-modal-title {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--dark-text);
 }
 
 body.dark-theme .carousel-caption-custom {
@@ -719,7 +865,10 @@ body.dark-theme .background-codes span {
 
 /* Estilo antigo removido - agora está no .header-controls */
 
-/* Seta animada para o portfólio */
+/**
+ * Animated Portfolio Arrow
+ * Bouncing arrow indicator for scrolling to portfolio
+ */
 .scroll-arrow {
     position: absolute;
     bottom: 40px;
@@ -752,7 +901,10 @@ body.dark-theme .scroll-arrow {
     color: var(--dark-text);
 }
 
-/* Media Queries */
+/**
+ * Responsive Design
+ * Media queries for different screen sizes
+ */
 @media (max-width: 1024px) {
     .portfolio-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -765,6 +917,21 @@ body.dark-theme .scroll-arrow {
 
     .modal-image {
         height: 250px;
+    }
+    
+    /* Responsive styles for image modal - tablets */
+    .image-modal-close {
+        top: -45px;
+        right: -5px;
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
+    }
+    
+    .image-modal-title {
+        font-size: 1.1rem;
+        padding: 9px 18px;
+        margin-top: 18px;
     }
 }
 
@@ -812,6 +979,13 @@ body.dark-theme .scroll-arrow {
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
         line-clamp: 2;
+    }
+
+    /* Adjust scroll-arrow for smaller resolutions */
+    .scroll-arrow {
+        bottom: 20px;
+        font-size: 1.5rem;
+        z-index: 10;
     }
 
     /* Estilo antigo removido - agora está no .header-controls */
@@ -889,12 +1063,33 @@ body.dark-theme .scroll-arrow {
         padding: 8px 12px 8px 35px;
     }
 
+    /* Additional scroll-arrow adjustment for very small screens */
+    .scroll-arrow {
+        bottom: 15px;
+        font-size: 1.3rem;
+    }
+
     .modal-image {
         height: 200px;
     }
 
     .modal-info h2 {
         font-size: 1.3rem;
+    }
+    
+    /* Responsive styles for image modal */
+    .image-modal-close {
+        top: -40px;
+        right: 0;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .image-modal-title {
+        font-size: 1rem;
+        padding: 8px 16px;
+        margin-top: 15px;
     }
 
     .website-link {
@@ -929,7 +1124,10 @@ body.dark-theme .scroll-arrow {
     }
 }
 
-/* Controles do Header */
+/**
+ * Header Controls
+ * Styles for header navigation and control elements
+ */
 .header-controls {
     position: fixed;
     top: 20px;
@@ -941,7 +1139,7 @@ body.dark-theme .scroll-arrow {
     font-family: 'Ubuntu', sans-serif;
 }
 
-/* Botão de Alternar Tema */
+/* Theme Toggle Button */
 .theme-toggle-btn {
     background: var(--box-background);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -968,7 +1166,7 @@ body.dark-theme .scroll-arrow {
     transition: transform var(--transition-speed) ease;
 }
 
-/* Seletor de Idiomas */
+/* Language Selector */
 .language-selector {
     position: relative;
 }
@@ -1061,7 +1259,7 @@ body.dark-theme .scroll-arrow {
     object-fit: cover;
 }
 
-/* Tema escuro - Controles do Header */
+/* Dark Theme - Header Controls */
 body.dark-mode .theme-toggle-btn,
 body.dark-mode .language-toggle,
 body.dark-mode .language-menu {
@@ -1080,7 +1278,7 @@ body.dark-mode .language-option:hover {
     color: var(--dark-text);
 }
 
-/* Responsividade - Controles do Header */
+/* Responsiveness - Header Controls */
 @media (max-width: 768px) {
     .header-controls {
         top: 15px;

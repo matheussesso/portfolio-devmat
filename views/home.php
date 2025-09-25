@@ -1,73 +1,98 @@
 <?php 
 include __DIR__ . '/includes/header.php'; 
 include __DIR__ . '/../library/projects.php'; 
+
+// Load home section configurations
+$homeConfig = include __DIR__ . '/../library/configs.php';
 ?>
 
+<?php if ($homeConfig['animations']['background_codes']): ?>
 <div class="background-codes">
-    <span>{}</span>
-    <span>==</span>
-    <span>>=</span>
-    <span>&&</span>
-    <span>()</span>
-    <span>||</span>
-    <span>=></span>
+    <?php foreach ($homeConfig['animations']['background_code_elements'] as $code): ?>
+        <span><?php echo htmlspecialchars($code); ?></span>
+    <?php endforeach; ?>
 </div>
+<?php endif; ?>
 
-<!-- Seção de Apresentação Pessoal -->
+<!-- Personal Introduction Section -->
 <section id="home" class="home-section">
     <div class="container">
         <div class="box">
-            <img src="assets/img/foto.jpg" alt="Minha Foto" class="profile-image">
-            <h1>Matheus Sesso</h1>
+            <img src="<?php echo htmlspecialchars($homeConfig['personal']['profile_image']); ?>" 
+                 alt="<?php echo htmlspecialchars($homeConfig['personal']['profile_image_alt']); ?>" 
+                 class="profile-image">
+            <h1><?php echo htmlspecialchars($homeConfig['personal']['name']); ?></h1>
             <h2><?php echo __('full_stack_developer'); ?></h2>
             <p><?php echo __('intro_text'); ?></p>
 
+            <?php if ($homeConfig['interface']['show_portfolio_button']): ?>
             <button onclick="scrollToPortfolio()" class="btn-port scroll-to-portfolio">
                 <?php echo __('portfolio_button'); ?>
             </button>
+            <?php endif; ?>
                 
             <div class="skills">
-                <span class="badge">PHP</span>
-                <span class="badge">Laravel</span>
-                <span class="badge">CodeIgniter</span>
-                <span class="badge">WordPress</span>
-                <span class="badge">Joomla</span>
-                <span class="badge">JavaScript</span>
-                <span class="badge">React</span>
-                <span class="badge">Python</span>
-                <span class="badge">API</span>
-                <span class="badge">Tailwind</span>
-                <span class="badge">Bootstrap</span>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-                <span class="badge">Database</span>
-                <span class="badge">SQL</span>
-                <span class="badge">Docker</span>
-                <span class="badge">Linux</span>
-                <span class="badge">Bash</span>
-                <span class="badge">Git</span>
-                <span class="badge">Agile Methods</span>
+                <?php 
+                $skills = $homeConfig['skills'];
+                
+                // Shuffle skills if configured
+                if ($homeConfig['interface']['shuffle_skills']) {
+                    shuffle($skills);
+                }
+                
+                // Limit the number of skills if configured
+                if ($homeConfig['interface']['max_skills_display'] > 0) {
+                    $skills = array_slice($skills, 0, $homeConfig['interface']['max_skills_display']);
+                }
+                
+                // Display skills
+                foreach ($skills as $skill): ?>
+                    <span class="badge"><?php echo htmlspecialchars($skill); ?></span>
+                <?php endforeach; ?>
             </div>
 
             <div class="social-icons">
-                <a href="assets/cv/curriculo.pdf" target="_blank" title="<?php echo __('cv_title'); ?>"><i class="fas fa-file-alt"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=5561982891073" target="_blank" title="<?php echo __('whatsapp_title'); ?>"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:matheus@devmat.com.br" title="<?php echo __('email_title'); ?>"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/matheussesso/" target="_blank" title="<?php echo __('linkedin_title'); ?>"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/matheussesso" target="_blank" title="<?php echo __('github_title'); ?>"><i class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/@matheussesso_dev" target="_blank" title="<?php echo __('youtube_title'); ?>"><i class="fab fa-youtube"></i></a>
-                <a href="https://dev.to/matheussesso" target="_blank" title="<?php echo __('devto_title'); ?>"><i class="fab fa-dev"></i></a>
-                <a href="https://medium.com/@matsesso" target="_blank" title="<?php echo __('medium_title'); ?>"><i class="fab fa-medium"></i></a>
-                <a href="https://twitter.com/matheussesso" target="_blank" title="<?php echo __('twitter_title'); ?>"><i class="fab fa-twitter"></i></a>
+                <!-- Currículo -->
+                <a href="<?php echo htmlspecialchars($homeConfig['personal']['cv_file']); ?>" 
+                   target="_blank" 
+                   title="<?php echo __('cv_title'); ?>">
+                   <i class="fas fa-file-alt"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://api.whatsapp.com/send?phone=<?php echo htmlspecialchars($homeConfig['personal']['whatsapp_number']); ?>" 
+                   target="_blank" 
+                   title="<?php echo __('whatsapp_title'); ?>">
+                   <i class="fab fa-whatsapp"></i>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:<?php echo htmlspecialchars($homeConfig['personal']['email']); ?>" 
+                   title="<?php echo __('email_title'); ?>">
+                   <i class="fas fa-envelope"></i>
+                </a>
+                
+                <!-- Links Sociais Dinâmicos -->
+                <?php foreach ($homeConfig['social_links'] as $platform => $config): ?>
+                    <?php if ($config['enabled']): ?>
+                        <a href="<?php echo htmlspecialchars($config['url']); ?>" 
+                           target="_blank" 
+                           title="<?php echo __($platform . '_title'); ?>">
+                           <i class="fab fa-<?php echo $platform; ?>"></i>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
+    <?php if ($homeConfig['interface']['show_scroll_indicator']): ?>
     <div class="scroll-arrow" onclick="scrollToPortfolio()">
         <i class="fas fa-chevron-down"></i>
     </div>
+    <?php endif; ?>
 </section>
 
-<!-- Seção de Portfólio -->
+<!-- Portfolio Section -->
 <section id="portfolio" class="portfolio-section">
     <div class="container">
         <div class="portfolio-header">
@@ -125,7 +150,7 @@ include __DIR__ . '/../library/projects.php';
     </div>
 </section>
 
-<!-- Modal para detalhes do projeto -->
+<!-- Project Details Modal -->
 <div class="project-modal" id="projectModal">
     <div class="modal-content">
         <button class="modal-close"><i class="fas fa-times"></i></button>
@@ -150,7 +175,7 @@ include __DIR__ . '/../library/projects.php';
 
 <script src="assets/js/portfolio.js"></script>
 <script>
-// Inicializar o portfólio quando a página carregar
+// Initialize portfolio when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     const projects = <?php echo json_encode($projects); ?>;
     initPortfolio(projects);
