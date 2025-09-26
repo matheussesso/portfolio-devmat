@@ -66,7 +66,7 @@
  ];
 
 // Load configuration to check if shuffle is enabled
-$homeConfig = include __DIR__ . '/configs.php';
+$homeConfig = include __DIR__ . '/config.php';
 
 // Shuffle projects only if configured
 if (isset($homeConfig['interface']['shuffle_projects']) && $homeConfig['interface']['shuffle_projects']) {
