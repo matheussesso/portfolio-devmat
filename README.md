@@ -33,6 +33,7 @@ A simple, modern, responsive portfolio template built with pure PHP and a bit of
 ```
 portfolio-devmat/
 ├── library/                      # System logic
+│   ├── config.php              # Configs
 │   ├── language.php              # Language system
 │   ├── projects.php              # Portfolio projects data
 │   └── languages/                # Translation files
