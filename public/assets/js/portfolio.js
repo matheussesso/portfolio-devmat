@@ -191,7 +191,7 @@ function initPortfolio(projects) {
         document.getElementById('modalTitle').textContent = project.title;
         document.getElementById('modalDomain').textContent = project.domain;
         document.getElementById('modalLink').href = project.url;
-        document.getElementById('modalDescription').textContent = project.description;
+        document.getElementById('modalDescription').innerHTML = project.description;
         
         const techTags = document.getElementById('modalTechTags');
         techTags.innerHTML = '';

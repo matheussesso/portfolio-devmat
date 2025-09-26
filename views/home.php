@@ -3,7 +3,7 @@ include __DIR__ . '/includes/header.php';
 include __DIR__ . '/../library/projects.php'; 
 
 // Load home section configurations
-$homeConfig = include __DIR__ . '/../library/configs.php';
+$homeConfig = include __DIR__ . '/../library/config.php';
 ?>
 
 <?php if ($homeConfig['animations']['background_codes']): ?>
