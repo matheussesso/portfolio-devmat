@@ -65,7 +65,8 @@ cd portfolio-devmat
 ```
 
 ### Configuration
-1. **Edit your info** in `library/configs.php`
+1. **Copy and edit your information** in `library/config.sample.php` to `library/config.php`
+1. **Copy and edit your projects** in `library/projects.sample.php` to `library/projects.php`
 2. **Replace images** in `public/assets/img/`
 3. **Update projects** in `library/projects.php`
 4. **Configure Google Analytics** in `views/includes/header.php`

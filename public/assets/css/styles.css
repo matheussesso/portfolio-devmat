@@ -720,9 +720,22 @@ p {
     color: var(--text-light);
 }
 
+.modal-info p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: color var(--transition-speed) ease;
+}
+
+.modal-info p a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
 .modal-technologies h4 {
     font-size: 1.1rem;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     color: var(--text-color);
 }
 
