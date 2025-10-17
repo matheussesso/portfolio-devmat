@@ -1,9 +1,9 @@
 # 🌐 Developer Portfolio Template
 
 [![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -15,7 +15,7 @@
 
 <br>
 
-A simple, modern, responsive portfolio template built with pure PHP and a bit of Javascript, featuring multi-language support, dark/light theme toggle, and an elegant interface. Perfect for developers looking to create their own portfolio website.
+This is my personal portfolio, which I decided to share. A simple, modern, responsive portfolio template built with pure PHP and a bit of JavaScript, featuring multi-language support, dark/light theme toggle, and an elegant interface. Perfect for developers looking to create their own portfolio website.
 
 ## Features
 
@@ -23,17 +23,16 @@ A simple, modern, responsive portfolio template built with pure PHP and a bit of
 - **Dark/Light theme** with smooth transitions
 - **Responsive design** for all devices
 - **Interactive portfolio** with project filtering
+- **Articles section** with DEV.to API integration
 - **Clean URLs** with custom routing
 - **SEO optimized** with translated meta tags
 - **Google Analytics** ready
-
 
 ## Project Structure
 
 ```
 portfolio-devmat/
 ├── library/                      # System logic
-│   ├── config.php                # Configs
 │   ├── language.php              # Language system
 │   ├── projects.php              # Portfolio projects data
 │   └── languages/                # Translation files
@@ -66,11 +65,11 @@ cd portfolio-devmat
 ```
 
 ### Configuration
-1. **Copy and edit your information** in `library/config.sample.php` to `library/config.php`
-1. **Copy and edit your projects** in `library/projects.sample.php` to `library/projects.php`
+1. **Edit your info** in `library/configs.php`
 2. **Replace images** in `public/assets/img/`
 3. **Update projects** in `library/projects.php`
-4. **Configure Google Analytics** in `views/includes/header.php`
+4. **Configure DEV.to username** in `public/assets/js/articles.js`
+5. **Configure Google Analytics** in `views/includes/header.php`
 
 ## Usage
 
@@ -98,28 +97,69 @@ Edit `library/projects.php`:
 ]
 ```
 
+### Articles Configuration
+Configure your DEV.to articles in `public/assets/js/articles.js`:
+```javascript
+const DEVTO_USERNAME = 'your-devto-username';
+const DEVTO_API_URL = `https://dev.to/api/articles?username=${DEVTO_USERNAME}&per_page=10`;
+```
+
 ### Customization
 - **Colors**: Edit CSS variables in `public/assets/css/styles.css`
 - **Fonts**: Update Google Fonts link in header
 - **Content**: Modify translation files in `library/languages/`
+- **Articles**: Update DEV.to username and API settings
+
+## Articles System
+
+The portfolio features a dynamic articles section that integrates with the **DEV.to API** to display your latest blog posts.
+
+### Features
+- **Automatic fetching** of articles from DEV.to
+- **Responsive carousel** navigation with touch support
+- **Article statistics** showing reactions and comments
+- **Multi-language support** for article interface
+- **Error handling** for API failures
+- **Loading states** and smooth animations
+- **Direct links** to read full articles on DEV.to
+
+### Configuration
+1. Edit your DEV.to username in `public/assets/js/articles.js`:
+```javascript
+const DEVTO_USERNAME = 'your-username-here';
+```
+
+2. Customize the number of articles displayed:
+```javascript
+const DEVTO_API_URL = `https://dev.to/api/articles?username=${DEVTO_USERNAME}&per_page=10`;
+```
+
+3. Enable/disable the articles button in `library/configs.php`:
+```php
+'interface' => [
+    'show_articles_button' => true,
+    // ... other settings
+]
+```
+
+### How it Works
+The system fetches articles using the DEV.to public API, displaying:
+- Article title and description
+- Cover image (with fallback)
+- Publication date
+- Reaction and comment counts
+- Article tags (limited to 3)
+
+All content is dynamically loaded and supports the site's multi-language system.
 
 ## Technical Features
 - **Clean URLs** with custom routing
 - **Multi-language system** with browser detection
 - **Dark/Light theme** with localStorage persistence
 - **Interactive portfolio** with filtering and search
+- **DEV.to API integration** for dynamic articles loading
 - **Responsive design** for all devices
 - **SEO optimized** with translated meta tags
-
-## Contributing
-
-Contributions are welcome! Please:
-
-1. **Fork** the project
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
 
 ## License
 

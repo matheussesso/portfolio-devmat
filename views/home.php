@@ -3,7 +3,7 @@ include __DIR__ . '/includes/header.php';
 include __DIR__ . '/../library/projects.php'; 
 
 // Load home section configurations
-$homeConfig = include __DIR__ . '/../library/config.php';
+$homeConfig = include __DIR__ . '/../library/configs.php';
 ?>
 
 <?php if ($homeConfig['animations']['background_codes']): ?>
@@ -19,11 +19,17 @@ $homeConfig = include __DIR__ . '/../library/config.php';
     <div class="container">
         <div class="box">
             <img src="<?php echo htmlspecialchars($homeConfig['personal']['profile_image']); ?>" 
-                 alt="<?php echo htmlspecialchars($homeConfig['personal']['profile_image_alt']); ?>" 
+                 alt="<?php echo __('profile_image_alt'); ?>" 
                  class="profile-image">
             <h1><?php echo htmlspecialchars($homeConfig['personal']['name']); ?></h1>
             <h2><?php echo __('full_stack_developer'); ?></h2>
             <p><?php echo __('intro_text'); ?></p>
+
+            <?php if ($homeConfig['interface']['show_articles_button']): ?>
+            <button onclick="scrollToArticles()" class="btn-port scroll-to-articles me-2">
+                <?php echo __('articles_button'); ?>
+            </button>
+            <?php endif; ?>
 
             <?php if ($homeConfig['interface']['show_portfolio_button']): ?>
             <button onclick="scrollToPortfolio()" class="btn-port scroll-to-portfolio">
@@ -83,6 +89,51 @@ $homeConfig = include __DIR__ . '/../library/config.php';
                     <?php endif; ?>
                 <?php endforeach; ?>
             </div>
+        </div>
+    </div>
+    <?php if ($homeConfig['interface']['show_scroll_indicator']): ?>
+    <div class="scroll-arrow" onclick="scrollToArticles()">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <?php endif; ?>
+</section>
+
+<!-- Articles Section -->
+<section id="articles" class="articles-section">
+    <div class="container">
+        <div class="articles-header">
+            <div class="header-top">
+                <div class="header-title">
+                    <h1><?php echo __('my_articles'); ?></h1>
+                    <p><?php echo __('articles_subtitle'); ?></p>
+                </div>
+                <button onclick="scrollToHome()" class="btn-port scroll-to-home">
+                    <i class="fas fa-home"></i> <?php echo __('home_button'); ?>
+                </button>
+            </div>
+        </div>
+        
+        <div class="articles-container">
+            <button class="articles-nav-btn articles-nav-prev" id="articlesPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="articles-wrapper" id="articlesWrapper">
+                <div class="articles-loading" id="articlesLoading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p><?php echo __('loading_articles'); ?></p>
+                </div>
+            </div>
+            
+            <button class="articles-nav-btn articles-nav-next" id="articlesNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="articles-link-wrapper">
+            <a href="https://dev.to/matheussesso" target="_blank" class="btn-port btn-view-all mt-3">
+                <i class="fab fa-dev"></i> <?php echo __('view_all_articles'); ?>
+            </a>
         </div>
     </div>
     <?php if ($homeConfig['interface']['show_scroll_indicator']): ?>
@@ -173,7 +224,57 @@ $homeConfig = include __DIR__ . '/../library/config.php';
     </div>
 </div>
 
+<footer>
+    <div class="footer-content">
+        <p><?php echo __('footer_text'); ?></p>
+    </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float-btn" id="whatsappFloatBtn" data-tooltip="<?php echo __('whatsapp_tooltip'); ?>">
+    <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- WhatsApp Contact Form Modal -->
+<div class="whatsapp-modal" id="whatsappModal">
+    <div class="whatsapp-modal-content">
+        <button class="whatsapp-modal-close" id="whatsappModalClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="whatsapp-modal-header">
+            <i class="fab fa-whatsapp"></i>
+            <h3><?php echo __('whatsapp_contact_title'); ?></h3>
+            <p><?php echo __('whatsapp_contact_subtitle'); ?></p>
+        </div>
+        <form class="whatsapp-form" id="whatsappForm">
+            <div class="form-group">
+                <label for="contactName">
+                    <i class="fas fa-user"></i> <?php echo __('contact_name'); ?>
+                </label>
+                <input type="text" id="contactName" name="name" placeholder="<?php echo __('contact_name_placeholder'); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">
+                    <i class="fas fa-envelope"></i> <?php echo __('contact_email'); ?>
+                </label>
+                <input type="email" id="contactEmail" name="email" placeholder="<?php echo __('contact_email_placeholder'); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="contactMessage">
+                    <i class="fas fa-comment-alt"></i> <?php echo __('contact_message'); ?>
+                </label>
+                <textarea id="contactMessage" name="message" rows="4" placeholder="<?php echo __('contact_message_placeholder'); ?>" required></textarea>
+            </div>
+            <button type="submit" class="whatsapp-submit-btn">
+                <i class="fab fa-whatsapp"></i> <?php echo __('send_whatsapp'); ?>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="assets/js/articles.js"></script>
 <script src="assets/js/portfolio.js"></script>
+<script src="assets/js/whatsapp.js"></script>
 <script>
 // Initialize portfolio when the page loads
 document.addEventListener('DOMContentLoaded', function() {
@@ -183,3 +284,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
+

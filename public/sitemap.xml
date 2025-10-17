@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Homepage - Portuguese -->
+    <url>
+        <loc>https://devmat.com.br/</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://devmat.com.br/?lang=pt"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devmat.com.br/?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devmat.com.br/"/>
+    </url>
+    
+    <!-- Homepage - English -->
+    <url>
+        <loc>https://devmat.com.br/?lang=en</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://devmat.com.br/?lang=pt"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devmat.com.br/?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devmat.com.br/"/>
+    </url>
+    
+    <!-- Portfolio Section - Portuguese -->
+    <url>
+        <loc>https://devmat.com.br/#portfolio</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://devmat.com.br/?lang=pt#portfolio"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devmat.com.br/?lang=en#portfolio"/>
+    </url>
+    
+    <!-- Articles Section - Portuguese -->
+    <url>
+        <loc>https://devmat.com.br/#articles</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://devmat.com.br/?lang=pt#articles"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devmat.com.br/?lang=en#articles"/>
+    </url>
+    
+</urlset>

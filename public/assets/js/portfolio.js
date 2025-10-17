@@ -13,6 +13,16 @@ function scrollToPortfolio() {
 }
 
 /**
+ * Smoothly scrolls to the articles section and updates URL hash
+ */
+function scrollToArticles() {
+    document.getElementById('articles').scrollIntoView({
+        behavior: 'smooth'
+    });
+    window.location.hash = 'articles';
+}
+
+/**
  * Smoothly scrolls back to the home section
  */
 function scrollToHome() {

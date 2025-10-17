@@ -1,0 +1,16 @@
+# robots.txt for https://devmat.com.br/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://devmat.com.br/sitemap.xml
+
+# Disallow access to sensitive directories
+Disallow: /library/
+Disallow: /views/
+
+# Allow assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/
