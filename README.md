@@ -152,15 +152,6 @@ The system fetches articles using the DEV.to public API, displaying:
 
 All content is dynamically loaded and supports the site's multi-language system.
 
-## Technical Features
-- **Clean URLs** with custom routing
-- **Multi-language system** with browser detection
-- **Dark/Light theme** with localStorage persistence
-- **Interactive portfolio** with filtering and search
-- **DEV.to API integration** for dynamic articles loading
-- **Responsive design** for all devices
-- **SEO optimized** with translated meta tags
-
 ## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
