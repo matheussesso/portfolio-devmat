@@ -7,7 +7,7 @@ Allow: /
 Sitemap: https://devmat.com.br/sitemap.xml
 
 # Disallow access to sensitive directories
-Disallow: /library/
+Disallow: /src/
 Disallow: /views/
 
 # Allow assets

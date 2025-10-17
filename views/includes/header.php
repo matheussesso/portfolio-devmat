@@ -1,10 +1,10 @@
 <?php 
-require_once __DIR__ . '/../../library/language.php';
+require_once __DIR__ . '/../../src/language.php';
 $currentLang = Language::getCurrentLanguage();
 $langAttribute = $currentLang === 'en' ? 'en' : 'pt-br';
 
 // Load home configuration for SEO data
-$homeConfig = include __DIR__ . '/../../library/configs.php';
+$homeConfig = include __DIR__ . '/../../src/configs.php';
 
 // Get current URL for canonical and og:url
 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
@@ -152,16 +152,15 @@ $canonicalUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . parse_url($_SERVER['
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Google Analytics (Optional - Replace with your ID) -->
-    <!-- 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=SEU-GA-ID-AQUI"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJCHPBE4YF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'SEU-GA-ID-AQUI');
+        gtag('config', 'G-SJCHPBE4YF');
     </script>
-    -->
+   
 </head>
 
 <body>

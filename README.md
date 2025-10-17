@@ -32,7 +32,7 @@ This is my personal portfolio, which I decided to share. A simple, modern, respo
 
 ```
 portfolio-devmat/
-├── library/                      # System logic
+├── src/                      # System logic
 │   ├── language.php              # Language system
 │   ├── projects.php              # Portfolio projects data
 │   └── languages/                # Translation files
@@ -65,16 +65,16 @@ cd portfolio-devmat
 ```
 
 ### Configuration
-1. **Edit your info** in `library/configs.php`
+1. **Edit your info** in `src/configs.php`
 2. **Replace images** in `public/assets/img/`
-3. **Update projects** in `library/projects.php`
+3. **Update projects** in `src/projects.php`
 4. **Configure DEV.to username** in `public/assets/js/articles.js`
 5. **Configure Google Analytics** in `views/includes/header.php`
 
 ## Usage
 
 ### Language Configuration
-Configure languages in `library/config.php`:
+Configure languages in `src/config.php`:
 ```php
 'language' => [
     'default_language' => 'en',
@@ -85,7 +85,7 @@ Configure languages in `library/config.php`:
 ```
 
 ### Adding Projects
-Edit `library/projects.php`:
+Edit `src/projects.php`:
 ```php
 [
     'title' => __('project_name'),
@@ -107,7 +107,7 @@ const DEVTO_API_URL = `https://dev.to/api/articles?username=${DEVTO_USERNAME}&pe
 ### Customization
 - **Colors**: Edit CSS variables in `public/assets/css/styles.css`
 - **Fonts**: Update Google Fonts link in header
-- **Content**: Modify translation files in `library/languages/`
+- **Content**: Modify translation files in `src/languages/`
 - **Articles**: Update DEV.to username and API settings
 
 ## Articles System
@@ -134,7 +134,7 @@ const DEVTO_USERNAME = 'your-username-here';
 const DEVTO_API_URL = `https://dev.to/api/articles?username=${DEVTO_USERNAME}&per_page=10`;
 ```
 
-3. Enable/disable the articles button in `library/configs.php`:
+3. Enable/disable the articles button in `src/configs.php`:
 ```php
 'interface' => [
     'show_articles_button' => true,

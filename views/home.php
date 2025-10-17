@@ -1,9 +1,9 @@
 <?php 
 include __DIR__ . '/includes/header.php'; 
-include __DIR__ . '/../library/projects.php'; 
+include __DIR__ . '/../src/projects.php'; 
 
 // Load home section configurations
-$homeConfig = include __DIR__ . '/../library/configs.php';
+$homeConfig = include __DIR__ . '/../src/configs.php';
 ?>
 
 <?php if ($homeConfig['animations']['background_codes']): ?>
