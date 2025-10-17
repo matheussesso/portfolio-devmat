@@ -46,7 +46,7 @@ return [
             'enabled' => true
         ],
         'reddit' => [
-            'url' => 'https://reddit.com/matheus-sesso',
+            'url' => 'https://reddit.com/user/matheus-sesso',
             'enabled' => true
         ]
     ],
