@@ -10,7 +10,7 @@
 <br>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/matheussesso/portfolio-devmat/refs/heads/main/public/assets/img/imgdemo.gif" alt="Demo do Portfolio" width="600" style="margin-bottom: 20px;" />
+  <img src="https://raw.githubusercontent.com/matheussesso/portfolio-devmat/refs/heads/main/public/assets/img/portfolio/site-devmat.gif" alt="Demo do Portfolio" width="600" style="margin-bottom: 20px;" />
 </div>
 
 <br>
