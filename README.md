@@ -32,12 +32,6 @@ This is my personal portfolio, which I decided to share. A simple, modern, respo
 
 ```
 portfolio-devmat/
-├── src/                      # System logic
-│   ├── language.php              # Language system
-│   ├── projects.php              # Portfolio projects data
-│   └── languages/                # Translation files
-│       ├── pt.php                # Portuguese
-│       └── en.php                # English
 ├── public/                       # Public files
 │   ├── index.php                 # Main router
 │   └── assets/                   # Static resources
@@ -45,6 +39,12 @@ portfolio-devmat/
 │       ├── js/                   # JavaScript files
 │       ├── img/                  # Images
 │       └── cv/                   # Resume PDF
+├── src/                          # System logic
+│   ├── language.php              # Language system
+│   ├── projects.php              # Portfolio projects data
+│   └── languages/                # Translation files
+│       ├── pt.php                # Portuguese
+│       └── en.php                # English
 └── views/                        # PHP templates
     ├── home.php                  # Home page
     ├── 404.php                   # Error page
